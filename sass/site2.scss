@@ -310,6 +310,34 @@ footer {
   }
 }
 
+.example:not(:last-of-type) {
+  margin-bottom: 64px;
+}
+
+.example-header {
+  margin-bottom: 16px;
+}
+
+.example-wrapper,
+.example-code,
+.example-code .highlight,
+.example-code .prettyprint {
+  min-height: 300px;
+}
+
+.example-code .prettyprint {
+  margin: 0;
+}
+
+.example-result {
+  margin-left: 16px;
+}
+
+/* 2/3rds the width to match example-code */
+.example-caption {
+  width: 66.6% 
+}
+
 // Reference, article, other pages ---------------------------------------------
 
 // Desktop or larger
