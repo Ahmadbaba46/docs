@@ -71,22 +71,11 @@ title: Welcome
       <div class="example-wrapper" layout horizontal>
         <div class="example-code" two flex>
       {% highlight html %}
-<link rel="import" href="../polymer/polymer.html">
+{%raw%}
+<link rel="import" href="../../components/polymer/polymer.html">
 
 <dom-module id="profile-card">
-  <style>
-    :host {
-      display: inline-block;
-      font-family: Roboto, sans-serif;
-      border-radius: 2px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      padding: 16px;
-      text-align: center;
-    }
-    .avatar {
-      border-radius: 50%;
-    }
-  </style>
+  <link rel="import" type="css" href="profile-card.css">
   <template>
     <img class="avatar" src="{{img}}" alt="polymer" height="80">
     <h3>{{name}}</h3>
@@ -106,6 +95,7 @@ title: Welcome
 <profile-card img="https://goo.gl/9kw4kB"
               name="Eric Bidelman">
 </profile-card>
+{%endraw%}
       {% endhighlight %}
         </div>
       
