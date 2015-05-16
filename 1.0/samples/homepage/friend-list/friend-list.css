@@ -1,0 +1,14 @@
+.row {
+  margin-bottom: 16px;
+}
+.row img {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.row > span {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: Roboto;
+  margin: 16px;
+}

@@ -22,7 +22,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.9.0",
-    "iron-input": "PolymerElements/iron-input#^0.9.0"
+    "iron-input": "PolymerElements/iron-input#^0.9.0",
+    "firebase-element": "PolymerElements/firebase-element#f6ba282f072bc32706d626de5815d4ef049eedc3"
   },
   "resolutions": {
     "polymer": "0.9.0",

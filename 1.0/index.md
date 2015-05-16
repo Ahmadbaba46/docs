@@ -64,6 +64,63 @@ title: Welcome
 
     </div>
 
+    <div class="example">
+
+      <h2 class="example-header">Give 'em some style</h2>
+
+      <div class="example-wrapper" layout horizontal>
+        <div class="example-code" two flex>
+      {% highlight html %}
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="profile-card">
+  <style>
+    :host {
+      display: inline-block;
+      font-family: Roboto, sans-serif;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      padding: 16px;
+      text-align: center;
+    }
+    .avatar {
+      border-radius: 50%;
+    }
+  </style>
+  <template>
+    <img class="avatar" src="{{img}}" alt="polymer" height="80">
+    <h3>{{name}}</h3>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'profile-card',
+    properties: {
+      img: String,
+      name: String
+    }
+  });
+</script>
+
+<profile-card img="https://goo.gl/9kw4kB"
+              name="Eric Bidelman">
+</profile-card>
+      {% endhighlight %}
+        </div>
+      
+        <div class="example-result" layout vertical flex>
+          <iframe frameborder="0" src="samples/homepage/profile-card/index.html" width="100%" flex></iframe>
+        </div>
+
+      </div>
+      
+      <div class="example-caption">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ad molestias esse alias dicta enim eaque neque voluptatum, doloribus provident nihil laudantium commodi quibusdam debitis ex facilis excepturi magnam itaque?</p>
+      </div>
+
+    </div>
+
 
     <div class="example">
 
@@ -100,26 +157,43 @@ title: Welcome
 
     <div class="example">
       
-      <h2 class="example-header">Or combine them!</h2>
+      <h2 class="example-header">Power it all with real data</h2>
       
       <div class="example-wrapper" layout horizontal>
         
         <div class="example-code" two flex>
         {% highlight html %}
-<!-- Polyfill Web Components support for older browsers -->
-<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+{%raw%}
+<link rel="import" href="../firebase-element/firebase-element.html">
 
-<!-- Import element -->
-<link rel="import" href="components/google-map/google-map.html">
+<dom-module id="friend-list">
+  <link rel="import" type="css" href="friend-list.css">
+  <template>
+    <firebase-element data="{{data}}"
+                      location="https://users1.firebaseio.com/users">
+    </firebase-element>
+    <template is="dom-repeat" items="{{data}}">
+      <div class="row">
+        <img src="{{item.img}}" alt="{{item.name}}" height="50">
+        <span>{{item.name}}</span>
+      </div>
+    </template>
+  </template>
+</dom-module>
 
-<!-- Use element -->
-<google-map lat="37.790" long="-122.390" flex></google-map>
+<script>
+  Polymer({
+    is: 'friend-list'
+  });
+</script>
+
+<friend-list></friend-list>
+{%endraw%}
         {% endhighlight %}
         </div>
         
         <div class="example-result" layout vertical flex>
-          <link rel="import" href="components/google-map/google-map.html">
-          <google-map lat="37.790" long="-122.390" flex></google-map>
+          <iframe frameborder="0" src="samples/homepage/friend-list/index.html" width="100%" flex></iframe>
         </div>
         
       </div>
